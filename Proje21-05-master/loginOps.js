@@ -3,7 +3,7 @@ const sql = require('mssql');
 var webconfig = {
   user: 'batuhan',
   password: 'batuhan61',
-  server: '192.168.1.109',
+  server: '192.168.1.117',
   database: 'Proje'
 };
 module.exports.userGuncelle = function(req, res) {
@@ -413,6 +413,20 @@ module.exports.sanat = function(req, res) {
     });
   });
 };
+module.exports.sanat = function(req, res) {
+  // Fotoğraf kategorisi
+  sql.connect(webconfig, function(err) {
+    if (err) console.log(err);
+    var request1 = new sql.Request();
+    request1.query("select * from tbl_EtkinlikOlustur where EtkinlikTipi = 'Fotoğrafçılık' ", function(err, verisonucu) {
+      if (err) {
+        console.log(err);
+      }
+      sql.close();
+      res.render('fotografcılık', { veri: verisonucu.recordset });
+    });
+  });
+};
 
 module.exports.meeting = function(req, res) {
   // Meeting kategorisi
@@ -425,20 +439,6 @@ module.exports.meeting = function(req, res) {
       }
       sql.close();
       res.render('Meeting', { veri: verisonucu.recordset });
-    });
-  });
-};
-module.exports.fuar = function(req, res) {
-  // Fuar kategorisi
-  sql.connect(webconfig, function(err) {
-    if (err) console.log(err);
-    var request1 = new sql.Request();
-    request1.query("select * from tbl_EtkinlikOlustur where EtkinlikTipi = 'Fuar' ", function(err, verisonucu) {
-      if (err) {
-        console.log(err);
-      }
-      sql.close();
-      res.render('fuar', { veri: verisonucu.recordset });
     });
   });
 };
@@ -458,20 +458,6 @@ module.exports.spor = function(req, res) {
   });
 };
 
-module.exports.fuar = function(req, res) {
-  // Fotoğrafçılık kategorisi
-  sql.connect(webconfig, function(err) {
-    if (err) console.log(err);
-    var request1 = new sql.Request();
-    request1.query("select * from tbl_EtkinlikOlustur where EtkinlikTipi = 'Fotoğrafçılık' ", function(err, verisonucu) {
-      if (err) {
-        console.log(err);
-      }
-      sql.close();
-      res.render('fotografcilik', { veri: verisonucu.recordset });
-    });
-  });
-};
 module.exports.fuar = function(req, res) {
   // Müze kategorisi
   sql.connect(webconfig, function(err) {

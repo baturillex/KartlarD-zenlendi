@@ -30,15 +30,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" style="color:white;" href="#">Anasayfa <span
+                    <a class="nav-link" style="color:white;"
+                        href="http://localhost:3000/etkinlikbilgileri/Anasayfa">Anasayfa <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " style="color:white;" href="#">Etkinlik Oluştur</a>
+                    <a class="nav-link " style="color:white;" href="http://localhost:3000/etkinlikolustur">Etkinlik
+                        Oluştur</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link " style="color:white;" href="#">Oturum Aç</a>
+                    <a class="nav-link " style="color:white;" href="http://localhost:3000/Login">Oturum Aç</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " style="color:white;"
+                        href="http://localhost:3000/etkinlikleregozat">Etkinliklere Göz At</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -47,6 +53,18 @@
         height: 35px;" type="submit">
                     Ara
                 </button>
+                <div class="dropdown" style="    margin-left: 50px;">
+                    <span>Kategoriler</span>
+                    <div class="dropdown-content" style="color:black;">
+                        <a class="nav-link " style="color: black;     margin-top: -30px;" href="spor">Spor</a>
+                        <a class="nav-link " style="color: black;     margin-top: -30px;" href="muzik">Müzik</a>
+                        <a class="nav-link " style="color: black;     margin-top: -30px;" href="Sinema">Sinema</a>
+                        <a class="nav-link " style="color: black;     margin-top: -30px;" href="Meeting">Meeting</a>
+                        <a class="nav-link " style="color: black;     margin-top: -30px;" href="fuar">Fuar</a>
+                        <a class="nav-link " style="color: black;     margin-top: -30px;"
+                            href="fotograf">Fotoğrafçılık</a>
+                    </div>
+                </div>
             </form>
         </div>
     </nav>
@@ -57,7 +75,9 @@
         <table>
 
 
-            <div class="card" style="width: 42rem; margin-top:85px;">
+            <div class="card" style="    width: 42rem;
+            margin-left: 261px;
+            margin-top: 125px;">
                 <div class="card-header" style="  padding-left: 270px;
 					font-size: 26px;
 					font-family: unset;">
@@ -77,6 +97,24 @@
                     </li>
                     <li class="list-group-item">
                         <%=p.Lokasyon%>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>Başlangıç Tarihi</h4>
+                    </li>
+                    <li class="list-group-item">
+                        <%=p.BaslangıcTarih%>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>Bitiş Tarihi</h4>
+                    </li>
+                    <li class="list-group-item">
+                        <%=p.BitisTarihi%>
+                    </li>
+                    <li class="list-group-item">
+                        <h4>Etkinlik Konusu</h4>
+                    </li>
+                    <li class="list-group-item">
+                        <%=p.EtkinlikKonusu%>
                     </li>
                     <% }); %>
                 </ul>

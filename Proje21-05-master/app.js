@@ -25,6 +25,9 @@ app.set('view engine', 'ejs');
 app.use(bp.urlencoded({ extended: false }));
 app.get('/', (req, res) => res.send('Hello World!'));
 
+app.get('/etkinlikolustur', function(req, res) {
+  res.render('etkinlikolustur');
+});
 app.get('/etkinlikolustur/:Id', function(req, res) {
   res.render('etkinlikolustur');
 });
@@ -65,6 +68,7 @@ app.get('/sanat', login.sanat);
 app.get('/meeting', login.meeting);
 app.get('/fuar', login.fuar);
 app.get('/spor', login.spor);
+app.get('/fotograf', login.sanat);
 
 app.get('/adminpanel/adminpanel', login.userPanel);
 app.get('/adminpanel/etkinliklistele', login.etkinlikPanel);

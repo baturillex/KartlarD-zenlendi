@@ -845,7 +845,7 @@ input[type='checkbox']:checked + label {
   font-weight: bold;
   font-size: 16px;
   padding: 50px;
-  margin-top: 650px;
+  margin-top: 700px;
 }
 
 .footer .footer-left,
@@ -1178,9 +1178,11 @@ div.portfoliocard div.follow_count {
   display: block;
 }
 .arkaplan {
-  position: absolute;
+  height: 450px;
   margin-left: -180px;
-  margin-top: -50px;
+  width: 710px;
+  position: absolute;
+  margin-top: -61px;
 }
 .aciklamakarti {
   width: 48rem;
